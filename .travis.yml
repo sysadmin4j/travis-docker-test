@@ -1,3 +1,8 @@
+env:
+- LOGSTASH_DOCKER_IMAGE="logstash/logstash"
+- LOGSTASH_DOCKER_REGISTRY="docker.elactic.co"
+- LOGSTASH_DOCKER_VERSION="5.4.1"
+
 sudo: required
 
 language: java
@@ -6,4 +11,4 @@ services:
   - docker
 
 before_install:
-- docker pull docker.elastic.co/logstash/logstash:5.4.1
+- docker pull ${LOGSTASH_DOCKER_REGISTRY}/${LOGSTASH_DOCKER_IMAGE}:${LOGSTASH_DOCKER_VERSION}
