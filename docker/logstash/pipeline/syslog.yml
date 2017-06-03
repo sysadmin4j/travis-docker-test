@@ -1,0 +1,18 @@
+input {
+  tcp {
+    #host => localhost
+    port => 5555
+    type => syslog
+  }
+  udp {
+    host => localhost
+    port => 5555
+    type => syslog
+  }
+}
+
+output {
+  file {
+    path => "/tmp/syslog-test"
+  }
+}
